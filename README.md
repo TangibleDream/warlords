@@ -1,1 +1,5 @@
-Another hack done in Ruby, by Rob Hicks
+Warlords is a castle conquest gam developed in the 80's
+A single map has many castles, a castle has a varying ability to generate fighting units of varying strength.
+As a player you are given a single castle at the start of the game, and are expected to build your forces to systematically conquer the remaining castles on the map.  Get them all and you win.
+You also start the game with a champion, and as you play, other champions may come along to sell their services to you. A champion can add many bonuses to the stack of units it controls, it can also strike fear into the hearts of the enmies it fights against. As the champion gains experience, these bonuses grow
+Various temples are also located throughout the map. Exploring these temples may imbue your troops with bonuses, or powerful magic items.
