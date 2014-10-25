@@ -3,6 +3,7 @@ class Castle
     puts 'Name your capitol!' if name == ""
     @name = gets.chomp if name == ""
     @name = name if name != ""
+    @owner = "unowned"
     @locx = locx
     @locy = locy
     @lev = lev
@@ -11,6 +12,12 @@ class Castle
   end
   def get_name
     @name
+  end
+  def set_owner(owner)
+    @owner = owner
+  end
+  def get_owner
+    @owner
   end
   def get_x
     @locx

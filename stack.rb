@@ -1,6 +1,7 @@
 class Stack
-  def initialize(unit, locx, locy)
+  def initialize(unit, owner, locx, locy)
     @stack = [unit]
+    @owner = owner
     @locx = locx
     @locy = locy
     @strbonus = 0
@@ -13,6 +14,9 @@ class Stack
   end
   def delete_unit(unit)
     @stack.delete(unit)
+  end
+  def get_owner
+    @owner
   end
   def get_stack
     @stack
