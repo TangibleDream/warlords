@@ -12,22 +12,23 @@ class Game
   end
   def create_game
     map = Map.new(16)
-    mapsquare_0_0 = Mapsquare.new('grass', 0, 0)
-    mapsquare_0_1 = Mapsquare.new('grass', 0, 1)
-    mapsquare_0_2 = Mapsquare.new('grass', 0, 2)
-    mapsquare_0_3 = Mapsquare.new('grass', 0, 3)
-    mapsquare_1_0 = Mapsquare.new('grass', 1, 0)
-    mapsquare_1_1 = Mapsquare.new('castle', 1, 1)
-    mapsquare_1_2 = Mapsquare.new('castle', 1, 2)
-    mapsquare_1_3 = Mapsquare.new('grass', 1, 3)
-    mapsquare_2_0 = Mapsquare.new('grass', 2, 0)
-    mapsquare_2_1 = Mapsquare.new('castle', 2, 1)
-    mapsquare_2_2 = Mapsquare.new('castle', 2, 2)
-    mapsquare_2_3 = Mapsquare.new('grass', 2, 3)
-    mapsquare_3_0 = Mapsquare.new('grass', 3, 0)
-    mapsquare_3_1 = Mapsquare.new('grass', 3, 1)
-    mapsquare_3_2 = Mapsquare.new('grass', 3, 2)
-    mapsquare_3_3 = Mapsquare.new('grass', 3, 3)
+    x = 0
+    y = 0
+    ma = []
+    while x < 4
+      y = 0 if y > 3
+      ma << Mapsquare.new('grass', x, y)
+      y = y + 1
+      if y > 3
+        y = 0
+        x = x + 1
+      end
+    end
+    ma[5].set_terrain('castle')
+    ma[6].set_terrain('castle')
+    ma[9].set_terrain('castle')
+    ma[10].set_terrain('castle')
+    map.set_map(ma)
   end
   def run
   end
