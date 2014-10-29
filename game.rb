@@ -14,5 +14,8 @@ class Game
     map = Map.new(16)
   end
   def run
+    map = Map.new(16)
+    data = map.loadmap
+    puts "Values are: #{data}"
   end
 end

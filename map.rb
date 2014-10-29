@@ -1,3 +1,4 @@
+require 'json'
 class Map
   def initialize(squares)
     @side = Math.sqrt(squares).to_i
@@ -27,6 +28,25 @@ class Map
   end
   def get_side
     @side
+  end
+  def loadmap
+    f = File.open('map.json', 'r')
+    m = JSON.load(f)
+    v = m['map'].values
+    x = 0
+    y = 0
+    c = []
+    v.each do |t|
+      terrain = 'grass' if t == 'G'
+      terrain = 'castle' if t == 'C'
+      c << Mapsquare.new(terrain, x, y)
+      x = x + 1
+      if x == 4
+        x = 0
+        y = y + 1
+      end
+    end
+    c
   end
   def savemap(map)
     fileout = File.open('map.json', 'w')
